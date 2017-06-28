@@ -1,0 +1,6 @@
+client/node_modules/*
+client/built/*
+venv/*
+*.pyc
+*.log
+text.txt

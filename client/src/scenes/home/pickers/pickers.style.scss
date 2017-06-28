@@ -1,0 +1,20 @@
+.select-container {
+    margin: 10px 10px;
+    padding: 2px 6px;
+    zoom: 1;
+}
+.refresh {
+    float: right;
+    // margin-left: 20px;
+    padding: 3px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    outline: none;
+    font-size: smaller;
+    cursor: pointer
+}
+.refresh:hover {
+    border-color: #49a9ee;
+    
+}

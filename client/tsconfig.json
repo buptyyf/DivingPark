@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "jsx": "react",
+        "module": "es2015",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+        "preserveConstEnums": true,
+        "rootDir": "src",
+        "outDir": "./built/",
+        "sourceMap": false,
+        "lib": ["es5", "es2015", "es2017", "dom", "scripthost"]
+    },
+    "filesGlob": [
+        "typings/**/*.d.ts",
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "include": [
+        "./**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "built"
+    ],
+    "compileOnSave": true,
+    "atom": {
+        "rewriteTsconfig": false,
+        "formatOnSave": true
+    }
+}
