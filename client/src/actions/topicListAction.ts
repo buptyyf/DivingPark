@@ -7,9 +7,9 @@ const TopicListUrl = {
     hupuBxj: `api/hupu/bxj`,
     hupuShh: `api/hupu/shh`,
     byrTopTen: `api/byrbbs/topten`,
-    segmentfault: `api/segmentfault/blogs/`,
-    jobbole: `api/jobbole/news/`,
-    hacker: `api/hacker/news/`
+    segmentfault: `api/segmentfault/blogs`,
+    jobbole: `api/jobbole/news`,
+    hacker: `api/hacker/news`
 };
 const preTypeStr = `topicList`;
 export const TopicListActionTypes = {
