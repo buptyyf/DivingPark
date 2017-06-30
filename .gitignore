@@ -4,3 +4,5 @@ venv/*
 *.pyc
 *.log
 text.txt
+*.out
+*.log

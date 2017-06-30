@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-// var HtmlwebpackPlugin = require('html-webpack-plugin');
+var HtmlwebpackPlugin = require('html-webpack-plugin');
 // var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 console.log("production!!!!!")
 
@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: "bundle.js",
         publicPath: '/',
-        path: path.resolve(__dirname, '/built'),
+        path: path.resolve(__dirname, 'built'),
     },
 
     resolve: {
@@ -38,7 +38,7 @@ module.exports = {
             },
         ]
     },
-    devServer: {
+    /*devServer: {
         proxy: {
         '/api/*': {
             target: 'http://127.0.0.1:5000'
@@ -46,8 +46,11 @@ module.exports = {
         },
         historyApiFallback: true,
         inline: true
-    },
+    },*/
     plugins: [
+	new HtmlwebpackPlugin({
+      	    template: './index.html'
+        }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
