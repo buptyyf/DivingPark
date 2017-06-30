@@ -1,3 +1,9 @@
+export interface Action {
+    type?: string
+    name?: string
+    id?: number
+}
+
 class BoardAction {
     public selectBoardList = (name: string, id: number) => {
         return (

@@ -1,3 +1,5 @@
+import {Action} from '../actions/boardAction'
+
 const initialState: Models.Home.Board[] = [
     {
         name: 'GitHub',
@@ -17,7 +19,7 @@ const initialState: Models.Home.Board[] = [
     },
 ];
 
-export default function selectWebsite(state = initialState, action: any) {
+export default function selectWebsite(state = initialState, action: Action) {
     let newState = [] as Models.Home.Board[];
     switch(action.type) {
         case `Board`:

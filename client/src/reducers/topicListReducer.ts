@@ -1,4 +1,4 @@
-import {TopicListActionTypes as Types} from '../actions/topicListAction'
+import {TopicListActionTypes as Types, Action} from '../actions/topicListAction'
 let pageInfo: Models.Base.PageInfo = {
     curPage: 1,
     totalPage: 1
@@ -30,7 +30,7 @@ const initialState: Models.Home.TopicBoardStore[] = [
     },
 ];
 
-export default function topicList(state = initialState, action: any) {
+export default function topicList(state = initialState, action: Action) {
     let newState = [] as Models.Home.TopicBoardStore[];
     switch(action.type) {
         case Types.FetchingData:

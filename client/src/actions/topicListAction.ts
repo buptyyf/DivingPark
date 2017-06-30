@@ -17,18 +17,24 @@ export const TopicListActionTypes = {
     SuccessGetData: preTypeStr + 'Success',
     FetchDataError: preTypeStr + 'Fail',
 }
-
+export interface Action {
+    type: string
+    topicList?: Models.Base.TopicCard[]
+    id?: number
+    page?: Models.Base.PageInfo
+    error?: Error | string
+}
 class TopicListAction extends NetworkAction<{}, Models.Base.PagedList<Models.Base.TopicCard>> {
     /**
      * 写法一：中间加dispatch
      */
     
-    public getTopicList = (type: string, id: number, page = 1) => (dispatch: (obj: any)=>{}) => {
+    public getTopicList = (name: string, id: number, page = 1) => (dispatch: (obj: any)=>{}) => {
         if(page === 1) {
             console.log("refresh!!!!!")
             dispatch({type: TopicListActionTypes.FetchingData, id: id});
         }
-        let url = this.mapUrl(type, page);
+        let url = this.mapUrl(name, page);
         // console.log("getTopicList!!!!!")
         let result = this.promiseNetwork({url});
         result.then((res: Models.Base.WebBaseStruct<Models.Base.PagedList<Models.Base.TopicCard>>) => {
@@ -40,11 +46,11 @@ class TopicListAction extends NetworkAction<{}, Models.Base.PagedList<Models.Bas
                 dispatch({type: TopicListActionTypes.SuccessGetData, topicList: data.list, id});                
             } else {
                 console.log(message);
-                dispatch({'type': TopicListActionTypes.FetchDataError, error: message});
+                dispatch({type: TopicListActionTypes.FetchDataError, error: message});
             }
         }).catch((e) => {
             console.log(e);
-            dispatch({'type': TopicListActionTypes.FetchDataError, error: e});
+            dispatch({type: TopicListActionTypes.FetchDataError, error: e});
         })
     }
 
